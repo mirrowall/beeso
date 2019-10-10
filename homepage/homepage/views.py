@@ -6,3 +6,10 @@ def homepage(request):
     'index.html',
     {}
   )
+
+
+def detail(request):
+  return render(
+    request,
+    'about.html'
+  )
