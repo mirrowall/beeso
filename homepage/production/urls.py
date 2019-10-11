@@ -21,6 +21,6 @@ from homepage.views import homepage,detail
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^', homepage),
+    url(r'^$', homepage),
     url(r'^detail/$', detail),
 ]

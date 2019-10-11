@@ -6,6 +6,7 @@
   {% block title %}
     <title></title>
   {% endblock %}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="" />
@@ -17,9 +18,6 @@
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link href="{% sass_src 'scss/style.scss' %}" rel="external nofollow" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{% static 'scss/style.css' %}">
-  {% endblock %}
-
-  {% block scripts %}
   {% endblock %}
   </head>
   <body>
@@ -56,137 +54,20 @@
 
     <main role="main" class="probootstrap-main js-probootstrap-main">
       {% block body %}
-      <div class="probootstrap-bar">
-        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
-        <div class="probootstrap-main-site-logo"><a href="index.html">Aside</a></a></div>
-      </div>
-      <div class="card-columns">
-        <div class="card">
-          <a href="single.html">
-          <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_5.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_6.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_7.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_8.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_9.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_10.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_11.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_12.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_13.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_14.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_15.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_16.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_17.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_18.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_19.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_20.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-        <div class="card">
-          <a href="single.html">
-            <img class="card-img-top probootstrap-animate" src="{% static 'images/img_21.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
-          </a>
-        </div>
-      </div>
-	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
-
-      <div class="container-fluid d-md-none">
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="list-unstyled d-flex probootstrap-aside-social">
-              <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
-              <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
-              <li><a href="#" class="p-2"><span class="icon-dribbble"></span></a></li>
-            </ul>
-            <p>&copy; 2017 ProBootstrap:Aside <br> All Rights Reserved. Designed by ProBootstrap</p>
-          </div>
-        </div>
-      </div>
-    {% endblock %}
+      {% endblock %}
     </main>
 
-    {% block scripts_extend %}
+    {% block scripts %}
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+
     {% endblock %}
-
-
   </body>
 </html>

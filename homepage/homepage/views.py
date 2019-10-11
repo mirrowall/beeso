@@ -11,5 +11,6 @@ def homepage(request):
 def detail(request):
   return render(
     request,
-    'about.html'
+    'detail.html',
+    {}
   )

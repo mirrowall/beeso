@@ -14,21 +14,125 @@
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
 {% endblock %}
 
-{% block scripts %}
-
-
+{% block body %}
+<div class="card-columns">
+  <div class="card">
+    <a href="single.html">
+    <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+    <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+    <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+    <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+    <img class="card-img-top probootstrap-animate" src="{% static 'images/img_1.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_2.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_3.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+  <div class="card">
+    <a href="single.html">
+      <img class="card-img-top probootstrap-animate" src="{% static 'images/img_4.jpg' %}" alt="Card image cap" data-animate-effect="fadeIn">
+    </a>
+  </div>
+</div>
 {% endblock %}
-{% block scripts_extend %}
-<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/jquery.imagesloaded.js' %}"></script>
-<script src="{% static 'js/jquery.wookmark.js' %}"></script>
-<script type="text/javascript">
+
+{% block scripts %}
+  {{ block.super }}
+
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script src="{% static 'js/jquery.imagesloaded.js' %}"></script>
+
+  <!-- TODO 这个不知道为啥不能加上 -->
+  <!-- <script src="{% static 'js/jquery.wookmark.js' %}"></script> -->
+
+  <script type="text/javascript">
     (function ($){
       var $tiles = $('.card-columns'),
           $handler = $('.card'),
@@ -83,4 +187,7 @@
       $window.bind('scroll.wookmark', onScroll);
     })(jQuery);
   </script>
+
+
+
 {% endblock %}
