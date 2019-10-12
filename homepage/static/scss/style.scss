@@ -55,7 +55,7 @@ html {
 body {
 	font-family: $font-sans-serif;
 	line-height: 1.8;
-	font-size: 18px;
+	font-size: 14px;
 	background: $white;
 	color: lighten(#545d61, 20%);
 
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5,
 		}
 	}
 	.probootstrap-overflow {
-		height: 500px;
+		height: 400px;
 	}
 	.probootstrap-aside-footer {
 		font-size: 14px;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5,
 .probootstrap-main {
 	width: calc(100% - 250px);
 	float: right;
-	padding: 30px;
+	padding: 10px;
 	position: relative;
 	&:before {
 		background: rgba(0,0,0,.5);
@@ -716,7 +716,7 @@ textarea {
 
 #fh5co-main {
 	// padding-bottom: 5em;
-	padding-top: 5em;
+	padding-top: 0em;
 	// float: left;
 	// width: 100%;
 }
@@ -735,7 +735,7 @@ textarea {
     	}
 
     	.fh5co-desc {
-    		padding: 20px;
+    		padding: 10px;
     		float: left;
     		line-height: 24px;
     	}
