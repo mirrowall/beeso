@@ -1,6 +1,9 @@
 $font-serif: 'Crimson Text', serif;
 $font-sans-serif: 'Work Sans', sans-serif;
 
+$font-monsterrat: 'Montserrat', arial, sans-serif;
+$font-roboto: 'Roboto', arial, sans-serif;
+
 $xl: 1140px;
 $lg: 960px;
 $md: 768px;
@@ -8,6 +11,44 @@ $sm: 576px;
 $white: #fff;
 $black: #000;
 $primary: #1FAD9F;
+
+// Overrides
+$grid-gutter-width: 40px !default;
+$border-radius-base:  4px !default;
+$padding-base-vertical: 14px !default;
+
+$brand-primary: #EF5353 !default;
+$brand-white: #fff;
+$brand-black: #000;
+$brand-darker: #444;
+$brand-gray: #ccc;
+$brand-lighter: #e9e9e9;
+$brand-body-color: #818892;
+$brand-selection-color: #f9f6f0;
+$brand-overlay-color: #000;
+$brand-bg-color: #f5f6f7;
+
+// Mixin
+@mixin transition($transition) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  -ms-transition: $transition;
+  transition:         $transition;
+}
+@mixin inline-block() {
+display:-moz-inline-stack;
+display:inline-block;
+zoom:1;
+*display:inline;
+}
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+   -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+        border-radius: $radius;
+}
+
 html {
 	overflow-x: hidden;
 }
@@ -57,9 +98,9 @@ h1, h2, h3, h4, h5,
 		padding-top: 40px;
 	}
 	&.active {
-		transform: translateX(0px);	
+		transform: translateX(0px);
 	}
-	
+
 	.probootstrap-close-menu {
 		position: absolute;
 		right: 15px;
@@ -86,7 +127,7 @@ h1, h2, h3, h4, h5,
 			text-transform: uppercase;
 			letter-spacing: .05em;
 		}
-		
+
 	}
 	.probootstrap-nav {
 		padding-left: 30px;
@@ -222,12 +263,12 @@ h1, h2, h3, h4, h5,
 		padding: 30px 15px;
 	}
 	.card-columns {
-		
-		
+
+
 		@media screen and (max-width: $xl) {
 			columns: 3;
 		}
-		
+
 		@media screen and (max-width: $lg) {
 			columns: 2;
 		}
@@ -251,7 +292,7 @@ h1, h2, h3, h4, h5,
 				opacity: 1;
 				visibility: visible;
 			}
-			
+
 			a {
 				position: relative;
 				display: block;
@@ -261,7 +302,7 @@ h1, h2, h3, h4, h5,
 					background: rgba(255,255,255,.7);
 					position: absolute;
 
-					
+
 					top: 0px;
 					left: 0px;
 					right: 0px;
@@ -289,11 +330,11 @@ h1, h2, h3, h4, h5,
 						opacity: 1;
 					}
 				}
-				
+
 			}
 
-			
-			
+
+
 		}
 	}
 }
@@ -306,7 +347,7 @@ h1, h2, h3, h4, h5,
   // background: lighten( $black, 10%);
   @extend .bg-image;
   background-position: center center;
- 
+
 	.probootstrap-heading {
 		font-size: 45px;
 		line-height: 1.34;
@@ -344,7 +385,7 @@ h1, h2, h3, h4, h5,
 			content: "";
 			background: rgba($black,.6);
 			position: absolute;
-			top: 0; 
+			top: 0;
 			left: 0;
 			bottom: 0;
 			right: 0;
@@ -549,7 +590,7 @@ textarea {
 		opacity: 0;
 		visibility: hidden;
 		transition: .3s all ease;
-		.owl-prev, 
+		.owl-prev,
 		.owl-next {
 			position: absolute;
 			font-size: 30px;
@@ -611,7 +652,7 @@ textarea {
 	background-color: rgba(255,255,255,0.9);
 	box-shadow: 0px 24px 64px rgba(0,0,0,0.24);
 	border-radius:16px;
-	opacity: 0; 
+	opacity: 0;
 	visibility: hidden;
 	transition: opacity .2s ease-out, visibility 0s linear .2s;
 	z-index:1000;
@@ -671,3 +712,59 @@ textarea {
     stroke-dashoffset: -136px;
   }
 }
+
+
+#fh5co-main {
+	// padding-bottom: 5em;
+	padding-top: 5em;
+	// float: left;
+	// width: 100%;
+}
+
+#fh5co-board {
+	.item {
+		margin: 10px 10px 20px 10px;
+		background: $brand-white;
+		@include border-radius(4px);
+		overflow: hidden;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    	box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    	a {
+    		display: block;
+    	}
+
+    	.fh5co-desc {
+    		padding: 20px;
+    		float: left;
+    		line-height: 24px;
+    	}
+    	.fh5co-item-title {
+    		font-family: $font-monsterrat;
+    		font-size: 17px;
+    		line-height: 24px;
+    		margin: 0;
+    		padding: 0;
+    	}
+		img {
+			max-width: 100%;
+			@include transition(.2s);
+		}
+		.fh5co-board-img {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			overflow: hidden;
+		}
+		.image-popup {
+    		&:hover {
+    			img {
+    				opacity: .5;
+    			}
+    		}
+    	}
+	}
+}
+.js .animate-box {
+	opacity: 0;
+}
+
