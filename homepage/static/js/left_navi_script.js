@@ -85,15 +85,15 @@ $(function(){
 	};
 	contentWayPoint();
 
-	if ($('.probootstrap-main').length > 0 ) {
-		$('.probootstrap-main').imagesLoaded( {
+	// if ($('.probootstrap-main').length > 0 ) {
+	// 	$('.probootstrap-main').imagesLoaded( {
 
-		  },
-		  function() {
-		  	if ($('.card').length > 0 ) {
-		    	$('.card').addClass('img-loaded');
-		    }
-		  }
-		);
-	}
+	// 	  },
+	// 	  function() {
+	// 	  	if ($('.card').length > 0 ) {
+	// 	    	$('.card').addClass('img-loaded');
+	// 	    }
+	// 	  }
+	// 	);
+	// }
 });
