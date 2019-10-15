@@ -130,3 +130,7 @@ STATICFILES_FINDERS = [
  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
  'sass_processor.finders.CssFinder',
 ]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL='/media/'

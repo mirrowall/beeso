@@ -12,134 +12,25 @@
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
 {% endblock %}
 
+{% block navi %}
+{% for category in categories %}
+  <li class="probootstrap-animate active" dlccccata-animate-effect="fadeInLeft"><a href="index.html">{{ category.title }}</a></li>
+{% endfor %}
+{% endblock %}
+
 {% block body %}
 <div id="fh5co-main">
   <div class="container">
-
     <div class="row">
-
       <div id="fh5co-board" data-columns>
-
+        {% for item in items %}
         <div class="item">
           <div class="animate-box">
-            <a href="{% static 'images/img_3.jpg' %}" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
+            <a class="image-popup fh5co-board-img" title="{{ item.title }}"><img src="{{ item.thumbnail.url }}" alt=""></a>
           </div>
-          <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
+          <div class="fh5co-desc">{{ item.title }}</div>
         </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="{% static 'images/img_2.jpg' %}" class="image-popup fh5co-board-img"><img src="{% static 'images/img_1.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="{% static 'images/img_3.jpg' %}" class="image-popup fh5co-board-img"><img src="{% static 'images/img_2.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_5.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="{% static 'images/img_3.jpg' %}" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-          </div>
-          <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_2.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_1.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_2.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_5.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="{% static 'images/img_3.jpg' %}" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-          </div>
-          <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_2.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_1.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_2.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_5.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="{% static 'images/img_3.jpg' %}" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-          </div>
-          <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_2.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_1.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_3.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_2.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_4.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_3.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="animate-box">
-            <a href="images/img_5.jpg" class="image-popup fh5co-board-img"><img src="{% static 'images/img_5.jpg' %}" alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
       </div>
      </div>
@@ -159,14 +50,16 @@
 	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 	<!-- Magnific Popup -->
 	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  
+
   <script src="{% static 'js/main.js' %}"></script>
 
   <script type="text/javascript">
     (function ($){
-      var $tiles = $('.fh5co-board'),
-          $handler = $('.card'),
-          $main = $('.fh5co-board'),
+      var $grid = document.querySelector('#fh5co-board');
+
+      var $tiles = $('#fh5co-board'),
+          $handler = $('.item'),
+          $main = $('#fh5co-board'),
           $window = $(window),
           $document = $(document),
           options = {
@@ -200,9 +93,11 @@
 
         if (closeToBottom) {
           // Get the first then items from the grid, clone them, and add them to the bottom of the grid
-          var $items = $('.card'),
-              $firstTen = $items.slice(0, 10);
-          $tiles.append($firstTen.clone());
+          var $items = $('.item'),
+          $firstTen = $items.slice(0, 10);
+          // $tiles.append($firstTen.clone());
+
+          salvattore.appendElements($grid, $firstTen.clone());
 
           console.log("have to bottom add more");
 
@@ -219,7 +114,7 @@
   </script>
 
 
-  
+
 {% endblock %}
 
 

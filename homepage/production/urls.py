@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from homepage.views import homepage,detail
 
@@ -23,4 +25,5 @@ urlpatterns = [
 
     url(r'^$', homepage),
     url(r'^detail/$', detail),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
