@@ -16,6 +16,6 @@ def homepage(request):
 def detail(request):
   return render(
     request,
-    'detail.html',
+    'image_viewer.html',
     {}
   )

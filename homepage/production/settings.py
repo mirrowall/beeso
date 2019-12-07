@@ -117,12 +117,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS  =(
+STATICFILES_DIRS  = (
     ("css", os.path.join(STATIC_ROOT,'css')),
+    ("viewer", os.path.join(STATIC_ROOT, 'viewer')),
     ("js", os.path.join(STATIC_ROOT,'js')),
     ("images", os.path.join(STATIC_ROOT,'images')),
     ("scss", os.path.join(STATIC_ROOT,'scss')),
     ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+    ("scripts", os.path.join(STATIC_ROOT,'scripts')),
 )
 
 STATICFILES_FINDERS = [
