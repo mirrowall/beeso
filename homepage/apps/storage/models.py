@@ -15,7 +15,7 @@ class Category(models.Model):
 class Item(models.Model):
   title = models.CharField(max_length=128, null=True, blank=True)
   actor = models.CharField(max_length=32, null=True, blank=True)
-  category = models.ForeignKey("Category", null=True, blank=True)
+  category = models.ForeignKey("Category", null=True, blank=True, on_delete=models.CASCADE)
   count = models.IntegerField(default=0, null=True, blank=True)
   pubdate = models.DateTimeField(null=True, blank=True)
   publisher = models.CharField(max_length=32, blank=True)
@@ -31,7 +31,7 @@ class Item(models.Model):
 
 
 class Image(models.Model):
-  item = models.ForeignKey(Item)
+  item = models.ForeignKey(Item, on_delete=models.CASCADE)
   image = models.ImageField(upload_to='images/', null=True)
   source = models.URLField(null=True)
   seq = models.IntegerField(default=0, null=True)

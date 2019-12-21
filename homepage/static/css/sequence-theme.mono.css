@@ -46,7 +46,7 @@ html,
   top: 0;
   bottom: 0;
   height: auto;
-  padding: 32px;
+  padding: 8px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -56,7 +56,7 @@ html,
 }
 
 .seq.seq-step2 {
-  background-color: #6BC85E;
+  background-color: rgb(95, 214, 121);
 }
 
 .seq.seq-step3 {
@@ -64,9 +64,8 @@ html,
 }
 
 .seq .seq-feature {
-  width: 70%;
-  max-width: 100%;
-  height: auto;
+  width: 80%;
+  height: 80%;
 }
 
 .seq .seq-valign {
@@ -241,11 +240,12 @@ html,
   border: none;
 }
 
+/* 在这里修改大小 */
 @media only screen and (min-width: 460px) {
   .seq .seq-feature {
     max-height: 50vh;
     width: auto;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
   }
 }
