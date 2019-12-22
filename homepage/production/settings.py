@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'sass_processor',
 
     'storage',
+    'homepage', 
 ]
 
 MIDDLEWARE = [
@@ -71,10 +72,21 @@ WSGI_APPLICATION = 'production.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
+        'NAME': 'beesodb',
+        'USER': 'root',
+        'PASSWORD': 'fuckroot',
+        'HOST':'localhost',
+        'PORT':'3306',
+        'OPTIONS': {'charset': 'utf8'},
     }
 }
 

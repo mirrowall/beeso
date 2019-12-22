@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+  <title>test html</title>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <!-- Salvattore -->
+    <link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+{% endblock %}
+
+{% block navi %}
+{% for category in categories %}
+  {% ifequal category.slug current.slug %}
+    <li class="probootstrap-animate active" dlccccata-animate-effect="fadeInLeft"><a href="/{{ category.slug }}/">{{ category.title }}</a></li>
+  {% else %}
+  <li class="probootstrap-animate" dlccccata-animate-effect="fadeInLeft"><a href="/{{ category.slug }}/">{{ category.title }}</a></li>
+  {% endifequal %}
+{% endfor %}
+{% endblock %}
+
+{% block body %}
+<div id="fh5co-main">
+  <div class="container">
+    <div class="row">
+      <div id="fh5co-board" data-columns>
+        {% for item in items %}
+        <div class="item">
+          <div class="animate-box">
+            <a class="image-popup fh5co-board-img" title="{{ item.title }}"><img src="{{ item.thumbnail.url }}" alt=""></a>
+          </div>
+          <div class="fh5co-desc">{{ item.title }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      </div>
+     </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <!-- Salvattore -->
+  <script src="{% static 'js/salvattore.min.js' %}"></script>
+  <!-- Modernizr JS -->
+  <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script type="text/javascript">
+    (function ($){
+      var $grid = document.querySelector('#fh5co-board');
+
+      var $tiles = $('#fh5co-board'),
+          $handler = $('.item'),
+          $main = $('#fh5co-board'),
+          $window = $(window),
+          $document = $(document),
+          options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $main, // Optional, used for some extra CSS styling
+            offset: 20, // Optional, the distance between grid items
+            itemWidth:280 // Optional, the width of a grid item
+          };
+      /**
+       * Reinitializes the wookmark handler after all images have loaded
+       */
+      function applyLayout() {
+        $tiles.imagesLoaded(function() {
+          // Destroy the old handler
+          // if ($handler.wookmarkInstance) {
+          //   $handler.wookmarkInstance.clear();
+          // }
+
+          // // Create a new layout handler.
+          // $handler = $('.card');
+          // $handler.wookmark(options);
+        });
+      }
+      /**
+       * When scrolled all the way to the bottom, add more tiles
+       */
+      function onScroll() {
+        // Check if we're within 100 pixels of the bottom edge of the broser window.
+        var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
+            closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
+
+        if (closeToBottom) {
+          // Get the first then items from the grid, clone them, and add them to the bottom of the grid
+          var $items = $('.item'),
+          $firstTen = $items.slice(0, 10);
+          // $tiles.append($firstTen.clone());
+
+          salvattore.appendElements($grid, $firstTen.clone());
+
+          console.log("have to bottom add more");
+
+          // applyLayout();
+        }
+      };
+
+      // Call the layout function for the first time
+      // applyLayout();
+
+      // Capture scroll event.
+      $window.bind('scroll.wookmark', onScroll);
+    })(jQuery);
+  </script>
+
+
+
+{% endblock %}
+
+

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-  <title>test html</title>
+  <title>{{ site.title }}</title>
 {% endblock %}
 
 {% block css %}
@@ -10,111 +10,297 @@
     <!-- Salvattore -->
     <link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/index_css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
 {% endblock %}
 
 {% block navi %}
 {% for category in categories %}
-  <li class="probootstrap-animate active" dlccccata-animate-effect="fadeInLeft"><a href="index.html">{{ category.title }}</a></li>
+  <li dlccccata-animate-effect="fadeInLeft"><a href="/{{ category.slug }}/">{{ category.title }}</a></li>
 {% endfor %}
 {% endblock %}
 
 {% block body %}
-<div id="fh5co-main">
-  <div class="container">
-    <div class="row">
-      <div id="fh5co-board" data-columns>
-        {% for item in items %}
-        <div class="item">
-          <div class="animate-box">
-            <a class="image-popup fh5co-board-img" title="{{ item.title }}"><img src="{{ item.thumbnail.url }}" alt=""></a>
+  <section id="container">
+    <div class="wrap-container">
+      <section class="content-box box-1">
+        <div class="zerogrid">
+          <div class="wrap-box"><!--Start Box-->
+            <div class="row">
+              <div id="owl-slide" class="owl-carousel">
+                <div class="item">
+                  <img src="{% static 'images/slider-1.jpg' %}" />
+                </div>
+                <div class="item">
+                  <img src="{% static 'images/slider-2.jpg' %}" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="fh5co-desc">{{ item.title }}</div>
         </div>
-        {% endfor %}
-      </div>
-      </div>
-     </div>
-</div>
+      </section>
+      <!-----------------content-box-2-------------------->
+      <section class="content-box box-2">
+        <div class="zerogrid">
+          <div class="wrap-box"><!--Start Box-->
+            <div class="row">
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/1.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/2.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/3.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/1.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/2.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/3.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/1.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-4">
+                <div class="wrapper">
+                  <div class="portfolio-box">
+                    <img src="{% static 'images/2.jpg' %}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-category text-faded">
+                          Category
+                        </div>
+                        <div class="project-name">
+                          Project Name
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-----------------content-box-3-------------------->
+				<section class="content-box boxstyle-1 box-3">
+					<div class="zerogrid">
+						<div class="row wrap-box"><!--Start Box-->
+							<div class="header t-center">
+								<div class="wrapper">
+									<h2 class="color-yellow">FULL SERVICE CATERING, SERVICE STAFF, RENTALS, FLORAL DESIGN</h2>
+									<span>Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-1-4">
+									<div class="wrap-col post">
+										<div class="item-container">
+											<div class="item-caption">
+												<div class="item-caption-inner">
+													<div class="item-caption-inner1">
+														<a class="example-image-link" href="images/portfolio-1.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+															<i class="fa fa-search"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<img src="{% static 'images/1.jpg' %}" alt=""/>
+										</div>
+										<h3>Banquet</h3>
+										<p>His primis omittam ...</p>
+										<a class="button" href="#">Learn More</a>
+									</div>
+								</div>
+								<div class="col-1-4">
+									<div class="wrap-col post">
+										<div class="item-container">
+											<div class="item-caption">
+												<div class="item-caption-inner">
+													<div class="item-caption-inner1">
+														<a class="example-image-link" href="images/portfolio-2.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+															<i class="fa fa-search"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<img src="{% static 'images/2.jpg' %}" alt=""/>
+										</div>
+										<h3>Banquet</h3>
+										<p>His primis omittam ...</p>
+										<a class="button" href="#">Learn More</a>
+									</div>
+								</div>
+								<div class="col-1-4">
+									<div class="wrap-col post">
+										<div class="item-container">
+											<div class="item-caption">
+												<div class="item-caption-inner">
+													<div class="item-caption-inner1">
+														<a class="example-image-link" href="images/portfolio-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+															<i class="fa fa-search"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<img src="{% static 'images/3.jpg' %}" alt=""/>
+										</div>
+										<h3>Banquet</h3>
+										<p>His primis omittam ...</p>
+										<a class="button" href="#">Learn More</a>
+									</div>
+								</div>
+								<div class="col-1-4">
+									<div class="wrap-col post">
+										<div class="item-container">
+											<div class="item-caption">
+												<div class="item-caption-inner">
+													<div class="item-caption-inner1">
+														<a class="example-image-link" href="images/portfolio-4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+															<i class="fa fa-search"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<img src="{% static 'images/1.jpg' %}" alt=""/>
+										</div>
+										<h3>Banquet</h3>
+										<p>His primis omittam ...</p>
+										<a class="button" href="#">Learn More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+    </div>
+  </section> 
 
+  <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+      $("#owl-slide").owlCarousel({
+        autoPlay: 3000,
+        items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1],
+		itemsTablet : [768, 1],
+        itemsMobile : [479, 1],
+		navigation: true,
+		navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+		pagination: false
+      });
+    });
+    </script>
 {% endblock %}
 
-{% block scripts %}
-  {{ block.super }}
-  <!-- Salvattore -->
-  <script src="{% static 'js/salvattore.min.js' %}"></script>
-  <!-- Modernizr JS -->
-  <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<!-- Magnific Popup -->
-	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-
-  <script src="{% static 'js/main.js' %}"></script>
-
-  <script type="text/javascript">
-    (function ($){
-      var $grid = document.querySelector('#fh5co-board');
-
-      var $tiles = $('#fh5co-board'),
-          $handler = $('.item'),
-          $main = $('#fh5co-board'),
-          $window = $(window),
-          $document = $(document),
-          options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $main, // Optional, used for some extra CSS styling
-            offset: 20, // Optional, the distance between grid items
-            itemWidth:280 // Optional, the width of a grid item
-          };
-      /**
-       * Reinitializes the wookmark handler after all images have loaded
-       */
-      function applyLayout() {
-        $tiles.imagesLoaded(function() {
-          // Destroy the old handler
-          // if ($handler.wookmarkInstance) {
-          //   $handler.wookmarkInstance.clear();
-          // }
-
-          // // Create a new layout handler.
-          // $handler = $('.card');
-          // $handler.wookmark(options);
-        });
-      }
-      /**
-       * When scrolled all the way to the bottom, add more tiles
-       */
-      function onScroll() {
-        // Check if we're within 100 pixels of the bottom edge of the broser window.
-        var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
-            closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
-
-        if (closeToBottom) {
-          // Get the first then items from the grid, clone them, and add them to the bottom of the grid
-          var $items = $('.item'),
-          $firstTen = $items.slice(0, 10);
-          // $tiles.append($firstTen.clone());
-
-          salvattore.appendElements($grid, $firstTen.clone());
-
-          console.log("have to bottom add more");
-
-          // applyLayout();
-        }
-      };
-
-      // Call the layout function for the first time
-      // applyLayout();
-
-      // Capture scroll event.
-      $window.bind('scroll.wookmark', onScroll);
-    })(jQuery);
-  </script>
-
-
-
-{% endblock %}
 
 
