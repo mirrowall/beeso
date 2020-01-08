@@ -29,10 +29,10 @@
       <div id="fh5co-board" data-columns>
         {% for item in items %}
         <div class="item">
-          <div class="animate-box">
-            <a class="image-popup fh5co-board-img" title="{{ item.title }}"><img src="{{ item.thumbnail.url }}" alt=""></a>
-          </div>
-          <div class="fh5co-desc">{{ item.title }}</div>
+            <div class="animate-box">
+                <a class="image-popup fh5co-board-img" title="{{ item.title }}" href="/item/{{ item.uuid_id }}/" target="_blank"><img src="{{ item.image }}" alt=""></a>
+            </div>
+            <div class="fh5co-desc">{{ item.title }}</div>
         </div>
         {% endfor %}
       </div>
@@ -55,7 +55,7 @@
 	<!-- Magnific Popup -->
 	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 
-  <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
   <script type="text/javascript">
     (function ($){
