@@ -24,7 +24,7 @@ class Item(models.Model):
     category = models.ForeignKey("Category", null=True, blank=True, on_delete=models.CASCADE)
     count = models.IntegerField(default=0, null=True, blank=True)
     pubdate = models.DateTimeField(null=True, blank=True)
-    publisher = models.CharField(max_length=32, blank=True)
+    publisher = models.CharField(max_length=32, blank=True, null=True)
     brief = models.CharField(max_length=255, null=True, blank=True)
     tags = TaggableManager()
     source = models.URLField(null=True, blank=True)
@@ -32,7 +32,7 @@ class Item(models.Model):
     liked = models.IntegerField(default=0, null=True, blank=True)
     image = models.URLField(max_length=255, null=True, blank=True)
     manual = models.ImageField(upload_to="images/", null=True, blank=True)
-    weight = models.IntegerField(default=0)
+    weight = models.IntegerField(default=0, null=True)
     extend = models.CharField(max_length=255, null=True, blank=True)
     recommend = models.ManyToManyField("Item")
 
