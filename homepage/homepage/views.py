@@ -1,4 +1,10 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator
+
+from rest_framework import serializers
+from rest_framework.response import Response
+from rest_framework.generics import ListAPIView
 
 from storage.models import Category, Item, Image
 from homepage.models import SiteConfig, Banner, Recommand, Hot
@@ -35,6 +41,27 @@ def category(request, *args, **kwargs):
         'category.html',
         locals()
     )
+
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = '__all__'
+
+class ItemMoreView(ListAPIView):
+    serializers_class = ItemSerializer
+    queryset = Item.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        import pdb; pdb.set_trace()
+        category = request.POST['cate']
+
+        queryset = self.get_queryset().filter(category__slug=category)
+        page = self.paginate_queryset(queryset)
+
+        serializer = self.get_serializer(page, many=True)
+        return self.get_response(serializer.data)
+
+
 
 
 def detail(request, *args, **kwargs):
