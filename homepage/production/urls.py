@@ -13,7 +13,7 @@ urlpatterns = [
 
     url(r'^$', homepage),
     url(r'^item/(?P<mid>([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}))/$', detail),
-    url(r'(?P<category>(\w+))/$', category),
     url(r'^api/item/$', csrf_exempt(ItemMoreView.as_view())),
+    url(r'(?P<category>(\w+))/$', category),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
