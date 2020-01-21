@@ -52,7 +52,6 @@ class ItemMoreView(ListAPIView):
     queryset = Item.objects.all()
 
     def post(self, request, *args, **kwargs):
-        import pdb; pdb.set_trace()
         category = request.POST['cate']
 
         queryset = self.get_queryset().filter(category__slug=category)
@@ -60,8 +59,6 @@ class ItemMoreView(ListAPIView):
 
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
-
-
 
 
 def detail(request, *args, **kwargs):
