@@ -48,7 +48,7 @@ class ItemSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ItemMoreView(ListAPIView):
-    serializers_class = ItemSerializer
+    serializer_class = ItemSerializer
     queryset = Item.objects.all()
 
     def post(self, request, *args, **kwargs):
