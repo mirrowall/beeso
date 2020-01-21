@@ -28,7 +28,7 @@ def category(request, *args, **kwargs):
     categories = Category.objects.all()
     site = SiteConfig.objects.filter(valid=True).first()
     current = Category.objects.get(slug=category)
-    items = Item.objects.filter(category=current).order_by("-weight")
+    items = Item.objects.filter(category=current).order_by("-weight")[:20]
 
     return render(
         request,
