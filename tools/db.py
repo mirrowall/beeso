@@ -20,16 +20,40 @@ def connect(user, password, db):
     return db, cursor
 
 
+import os
+from PIL import Image
 
+def clipimage(size):
+    width = int(size[0])
+    height = int(size[1])
+    box = ()
+    if (width > height):
+        dx = width - height
+        box = (dx / 2, 0, height + dx / 2,  height)
+    else:
+        dx = height - width
+        box = (0, dx / 2, width, width + dx / 2)
+    return box
 
+def thumb_photo(file_path,file_name):
+    __img = Image.open(file_path)
+    box = clipimage(__img.size)
+    region = __img.crop(box)
+    size = (348, 348)
+    region.thumbnail(size, Image.ANTIALIAS)
+    saveToPath = file_name
+    region.save(saveToPath, "JPEG")
 
-
+def hashname(filename):
+    import hashlib
+    return hashlib.md5().update(filename).hexdigest()
 
 if __name__ == '__main__':
     import pdb; pdb.set_trace()
     srcdb, srcurse = connect('root', 'fuckroot', 'spiderdb')
     dstdb, dstcurse = connect('root', 'fuckroot', 'beesodb')
 
+    """
     sql = "select * from photo_album_lib";
     srcurse.execute(sql)
     result = srcurse.fetchall()
@@ -58,5 +82,14 @@ if __name__ == '__main__':
             sql = 'insert into storage_image(image,seq,item_id) values("%s", %d, %d)'%("http://static.beeso.cn/images%s"%(filename), seq, newid)
             dstcurse.execute(sql)
         dstdb.commit()
+    """
+    IMAGE_FOLDER = "/home/miwoo/workspace/beeso/tools"
+    sql = "select image from storage_image"
+    dstcurse.execute(sql)
+    images = dstcurse.fetchall()
+    for img in images:
+        filename = os.path.join(IMAGE_FOLDER, img[0][img[0].find("pic"):])
+        if os.path.exists(filename):
+            thumb_photo(filename, os.path.join(IMAGE_FOLDER, "thumbnail", "%.jpg"%(hashname(img[0]))))
 
-            
+        
