@@ -25,6 +25,7 @@
 {% block body %}
 <div id="fh5co-main">
   <div class="container">
+    <input id="current_request_api" type="text" value="{{ api }}" style="display:none">
     <div class="row">
       <div id="fh5co-board" data-columns>
         {% for item in items %}
@@ -60,6 +61,11 @@
   <script type="text/javascript">
     (function ($){
       var $grid = document.querySelector('#fh5co-board');
+      var curent_category = '';
+      var pos = location.host.substring(0, location.host.length-1).lastIndexOf("/");
+      if (pos > 0) {
+        curent_category = location.host.substring(pos, location.host.length-1);
+      }
 
       var $tiles = $('#fh5co-board'),
           $handler = $('.item'),
@@ -67,7 +73,7 @@
           $window = $(window),
           $document = $(document),
           options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            autoResize: true, // This will auto-update the layout s the browser window is resized.
             container: $main, // Optional, used for some extra CSS styling
             offset: 20, // Optional, the distance between grid items
             itemWidth:280 // Optional, the width of a grid item
@@ -96,14 +102,32 @@
             closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
 
         if (closeToBottom) {
+            console.log("have to bottom add more");
+            if ($('#current_request_api').val()) {
+                console.log("post data to " + $('#current_request_api').val() + " and current is " + curent_category);
+                $.post($('#current_request_api').val(), {'cate': curent_category}, function(result) {
+                    if (result['next']) {
+                        $('#current_request_api').val(result['next']);
+                    }
+                    else {
+                        $('#current_request_api').val('');
+                    }
+
+                    var more = '';
+                    $.each(result['results'], function(index, node) {
+                        more += '<div class="item"><div class="animate-box"><a class="image-popup fh5co-board-img" title="' + node["title"] + '" href="/item/' + node['uuid_id'] + '/" target="_blank"><img src="' + node["image"] + '" alt=""></a></div><div class="fh5co-desc">' + node["title"] + '</div></div>';
+                    });
+                    console.log(more);
+                    salvattore.appendElements($grid, more);
+                });
+            }
           // Get the first then items from the grid, clone them, and add them to the bottom of the grid
-          var $items = $('.item'),
-          $firstTen = $items.slice(0, 10);
-          // $tiles.append($firstTen.clone());
+        //   var $items = $('.item'),
+        //   $firstTen = $items.slice(0, 10);
+        //   // $tiles.append($firstTen.clone());
 
-          salvattore.appendElements($grid, $firstTen.clone());
+        //   salvattore.appendElements($grid, $firstTen.clone());
 
-          console.log("have to bottom add more");
 
           // applyLayout();
         }

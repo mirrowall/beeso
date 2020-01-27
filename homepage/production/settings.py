@@ -31,6 +31,7 @@ INSTALLED_APPS = [
 
     'taggit',
     'sass_processor',
+    'rest_framework',
 
     'storage',
     'homepage',

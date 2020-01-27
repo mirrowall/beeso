@@ -40,7 +40,7 @@ def category(request, *args, **kwargs):
         request,
         'category.html',
         locals()
-    )
+    )   
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
