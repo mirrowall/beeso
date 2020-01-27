@@ -62,9 +62,9 @@
     (function ($){
       var $grid = document.querySelector('#fh5co-board');
       var curent_category = '';
-      var pos = location.host.substring(0, location.host.length-1).lastIndexOf("/");
-      if (pos > 0) {
-        curent_category = location.host.substring(pos, location.host.length-1);
+      var pos = location.pathname.substring(0, location.pathname.length-1).lastIndexOf("/");
+      if (pos >= 0) {
+        curent_category = location.pathname.substring(pos+1, location.pathname.length-1);
       }
 
       var $tiles = $('#fh5co-board'),
