@@ -126,9 +126,19 @@
                     salvattore.appendElements($grid, more_array);
                     requesting = false;
 
-                    offCanvass();
-		mobileMenuOutsideClick();
-		animateBoxWayPoint();
+                    var animateBoxWayPoint = function() {
+
+if ($('.animate-box').length > 0) {
+    $('.animate-box').waypoint( function( direction ) {
+
+        if( direction === 'down' && !$(this).hasClass('animated') ) {
+            $(this.element).addClass('bounceIn animated');
+        }
+
+    } , { offset: '75%' } );
+}
+
+};
                 });
             }
           // Get the first then items from the grid, clone them, and add them to the bottom of the grid
