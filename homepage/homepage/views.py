@@ -36,11 +36,15 @@ def category(request, *args, **kwargs):
     current = Category.objects.get(slug=category)
     items = Item.objects.filter(category=current).order_by("-weight")[:20]
 
+    api = ''
+    if Item.objects.filter(category=current).count() > 20:
+        api = '/api/item/?page=2'
+
     return render(
         request,
         'category.html',
         locals()
-    )   
+    )
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
