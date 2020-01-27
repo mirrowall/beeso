@@ -103,9 +103,7 @@
             closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
 
         if (closeToBottom) {
-            console.log("have to bottom add more");
             if ($('#current_request_api').val() && !requesting) {
-                console.log("post data to " + $('#current_request_api').val() + " and current is " + curent_category);
                 requesting = true;
                 $.post($('#current_request_api').val(), {'cate': curent_category}, function(result) {
                     if (result['next']) {
@@ -127,6 +125,10 @@
 
                     salvattore.appendElements($grid, more_array);
                     requesting = false;
+
+                    offCanvass();
+		mobileMenuOutsideClick();
+		animateBoxWayPoint();
                 });
             }
           // Get the first then items from the grid, clone them, and add them to the bottom of the grid
