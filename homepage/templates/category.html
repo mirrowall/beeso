@@ -117,8 +117,9 @@
                     $.each(result['results'], function(index, node) {
                         more = '<div class="item"><div class="animate-box"><a class="image-popup fh5co-board-img" title="' + node["title"] + '" href="/item/' + node['uuid_id'] + '/" target="_blank"><img src="' + node["image"] + '" alt=""></a></div><div class="fh5co-desc">' + node["title"] + '</div></div>';
                         var more_item = document.createElement("div");
+                        salvattore.appendElements($grid, [more_item]);
+
                         more_item.innerHTML= more;
-                        salvattore.appendElements($grid, more_item);
                     });
                     console.log(more);
                 });
