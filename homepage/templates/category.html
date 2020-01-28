@@ -85,13 +85,13 @@
       function applyLayout() {
         $tiles.imagesLoaded(function() {
           // Destroy the old handler
-          // if ($handler.wookmarkInstance) {
-          //   $handler.wookmarkInstance.clear();
-          // }
+          if ($handler.wookmarkInstance) {
+            $handler.wookmarkInstance.clear();
+          }
 
-          // // Create a new layout handler.
-          // $handler = $('.card');
-          // $handler.wookmark(options);
+          // Create a new layout handler.
+          $handler = $('.card');
+          $handler.wookmark(options);
         });
       }
       /**
@@ -145,7 +145,7 @@
         //   salvattore.appendElements($grid, $firstTen.clone());
 
 
-          // applyLayout();
+          applyLayout();
         }
       };
 
