@@ -127,13 +127,12 @@
                     requesting = false;
 
                     if ($('.animate-box').length > 0) {
-			$('.animate-box').waypoint( function( direction ) {
+			            $('.animate-box').waypoint( function( direction ) {
 
-				if( direction === 'down' && !$(this).hasClass('animated') ) {
-					$(this.element).addClass('bounceIn animated');
-				}
-
-			} , { offset: '75%' } );
+				        if( direction === 'down' && !$(this).hasClass('animated') ) {
+					        $(this.element).addClass('bounceIn animated');
+				        }
+			        } , { offset: '75%' } );
 		}
 
                 });

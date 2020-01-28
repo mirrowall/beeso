@@ -103,7 +103,7 @@
         {% for image in images %}
           <li class="seq-step1 seq-valign">
             <div class="seq-vcenter" style="width: 100%;height:  100%;">
-              <img data-seq class="seq-feature" src="{{ image.image }}" alt="{{ item.title }}" width="325" height="300" srcset="{{ image.medium }} 1x, {{ image.higt }} 2x" />
+              <img data-seq class="seq-feature" src="{{ image.image }}" alt="{{ item.title }}" width="325" height="300" srcset="{{ image.image }} 1x, {{ image.image }} 2x" />
             </div>
           </li>
         {% endfor %}
