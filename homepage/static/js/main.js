@@ -45,12 +45,12 @@
 
 	var magnifPopup = function() {
     var items = [
-      {src:'/static/images/img_1.jpg'},
-      {src:'/static/images/img_3.jpg'},
-      {src:'/static/images/img_6.jpg'},
-      {src:'/static/images/img_5.jpg'},
-      {src:'/static/images/img_4.jpg'},
-      {src:'/static/images/img_2.jpg'},
+      {src:'http://static.beeso.cn/images/pic/54/27554.jpg'},
+      {src:'http://static.beeso.cn/images/pic/17/37617.jpg'},
+      {src:'http://static.beeso.cn/images/pic/31/44331.jpg'},
+      {src:'http://static.beeso.cn/images/pic/49/47449t.jpg'},
+      {src:'http://static.beeso.cn/images/pic/41/76441t.jpg'},
+      {src:'http://static.beeso.cn/images/pic/38/20238.jpg'},
     ];
 
 		$('.image-popup').magnificPopup({
@@ -101,7 +101,7 @@
 
 
 	$(function(){
-		magnifPopup();
+		// magnifPopup();
 		offCanvass();
 		mobileMenuOutsideClick();
 		animateBoxWayPoint();

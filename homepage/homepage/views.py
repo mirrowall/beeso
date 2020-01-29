@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.generics import ListAPIView
+from rest_framework.views import APIView
 
 from storage.models import Category, Item, Image
 from homepage.models import SiteConfig, Banner, Recommand, Hot
@@ -38,7 +39,7 @@ def category(request, *args, **kwargs):
 
     api = ''
     if Item.objects.filter(category=current).count() > 20:
-        api = '/api/item/?page=2'
+        api = '/api/item/more/?page=2'
 
     return render(
         request,
@@ -63,6 +64,12 @@ class ItemMoreView(ListAPIView):
 
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
+
+class ItemDetailView(APIView):
+    def get(self, request, *args, **kwargs):
+        item = Item.objects.get(uuid_id=kwargs['mid'])
+        images = Image.objects.filter(item=item).order_by("seq")
+        return Response([image.image for image in images])
 
 
 def detail(request, *args, **kwargs):
