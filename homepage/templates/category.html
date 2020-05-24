@@ -10,6 +10,7 @@
     <!-- Salvattore -->
     <link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/application-9d4f05d631b7d8c541c2afe0e0756ff09af6c178b5007ed9699fc97210d57e90.css' %}">
 {% endblock %}
 
 {% block navi %}
@@ -31,7 +32,7 @@
         {% for item in items %}
         <div class="item">
             <div class="animate-box">
-                <a class="image-popup fh5co-board-img" href="/api/item/detail/{{ item.uuid_id }}/"><img src="{{ item.image }}" alt=""></a>
+                <a class="image-popup fh5co-board-img" href="/test/"><img src="{{ item.image }}" alt=""></a>
             </div>
             <div class="fh5co-desc"><a title="{{ item.title }}" href="/item/{{ item.uuid_id }}/" target="_blank">{{ item.title }}</a></div>
         </div>
@@ -110,7 +111,7 @@
         callbacks: {
             parseAjax: function(mfpResponse) {
                 console.log(mfpResponse.data);
-                mfpResponse.data = '<img id="imgId" class="mfp-img" src="http://static.beeso.cn/images/pic/54/27554.jpg" ><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter">1 of 6</div></div><button type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="fuck()"></button><button type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close"></button>';
+                // mfpResponse.data = '<img id="imgId" class="mfp-img" src="http://static.beeso.cn/images/pic/54/27554.jpg" ><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter">1 of 6</div></div><button type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="fuck()"></button><button type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close"></button>';
             },
             ajaxContentAdded: function() {
                 console.log(this.content);

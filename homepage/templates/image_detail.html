@@ -1,11 +1,5 @@
 {% load static %}
 
-<html>
-    <head>
-        <link rel="stylesheet" href="{% static 'css/application-9d4f05d631b7d8c541c2afe0e0756ff09af6c178b5007ed9699fc97210d57e90.css' %}">
-    </head>
-    <body>
-
 
 <div class="rd__modal rd__modal--open" id="photo-modal">
     <div class="rd__modal__overlay">
@@ -92,19 +86,13 @@
           </section>
 
 
-
           <section class="photo-page__section photo-page__section--photo">
             <div class="photo-page__photo">
-              <a class="js-photo-page-image-download-link" download="" href="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?cs=srgb&amp;dl=pexels-4403924.jpg&amp;fm=jpg" target="_blank">
-                <div class="js-photo-zoom-container photo-page__photo__image" data-zoom-src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" style="overflow: hidden; cursor: zoom-in;">
-                  <iframe allowfullscreen="" class="js-photo-page-video-iframe" mozallowfullscreen="" style="background: white none repeat scroll 0% 0%; display: none;" webkitallowfullscreen="" frameborder="0"></iframe>
-                  <img class="js-photo-page-image-img" style="background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(112.5vh); min-height: 300px; min-width: calc(450px);" alt="努沃勒埃利亚, 天氣, 太陽" data-zoom-src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" srcset="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940 940w, https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260 1260w, https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940 1880w, https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 2520w" data-zoom-initiated="true"></div>
-              </a>
+                <div class="js-photo-zoom-container photo-page__photo__image">
+                  <img class="js-photo-page-image-img" style="background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(200vh); min-height: 300px; min-width: calc(500px);" alt="努沃勒埃利亚, 天氣, 太陽" src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg">
+                </div>
             </div>
           </section>
-
-
-
 
           <section class="photo-page__section photo-page__section--photo-details">
             <div class="photo-page__photo-details-overview js-photo-page-photo-details">
@@ -725,10 +713,6 @@
 
 
 
-
-
-
-
             <section class="photo-page__section photo-page__section--related-tags" id="photo-page-related-tags">
               <div class="photo-page__section__title">
                 <div class="level">
@@ -740,52 +724,11 @@
               </div>
               <div class="photo-page__related-tags">
                 <ul class="photo-page__related-tags__container">
+                    {% for tag in tags %}
                   <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%8A%AA%E6%B2%83%E5%8B%92%E5%9F%83%E5%88%A9%E4%BA%9A/">努沃勒埃利亚</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%A4%A9%E6%B0%A3/">天氣</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%A4%AA%E9%99%BD/">太陽</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%B1%B1/">山</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%B1%B1%E4%B8%98/">山丘</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E5%B1%B1%E5%8C%BA/">山区</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%88%B6%E5%A4%96/">戶外</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%96%AF%E9%87%8C%E8%98%AD%E5%8D%A1/">斯里蘭卡</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%97%85%E8%A1%8C/">旅行</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%97%A5%E8%90%BD/">日落</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%99%AF%E8%A7%80/">景觀</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%9A%B4%E9%A2%A8%E9%9B%A8/">暴風雨</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E6%B0%B4/">水</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E7%81%AB%E5%B1%B1/">火山</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E8%8C%B6%E5%9B%AD/">茶园</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E8%96%84%E9%9C%A7/">薄霧</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%9B%A8/">雨</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%9B%AA/">雪</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%9B%B2/">雲</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%9C%A7/">霧</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%A2%A8%E6%99%AF/">風景</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%A2%A8%E6%9A%B4/">風暴</a></li>
-                  <li>
-                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="/zh-cn/search/%E9%BB%8E%E6%98%8E/">黎明</a></li>
+                    <a class="rd__tag" data-track-action="medium-related-tags" data-track-label="tag" href="">{{ tag }}</a>
+                </li>
+                      {% endfor %}
                 </ul>
                 <div class="photo-page__related-tags__overlay"></div>
               </div>
@@ -798,7 +741,3 @@
       </div>
     </div>
   </div>
-
-
-</body>
-</html>

@@ -7619,7 +7619,7 @@ ul.rd__dropdown__container__content__items>li hr {
  flex-direction:column;
  -webkit-box-align:center;
  align-items:center;
- background-color:rgba(12,15,19,.9);
+ background-color:rgba(12,15,19,0);
  overflow-y:auto;
  -webkit-overflow-scrolling:touch;
  z-index:109
