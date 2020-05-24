@@ -63,6 +63,16 @@
         navigateByImgClick: true,
       },
       items:items,
+      callbacks: {
+        elementParse: function(item) {
+          // Function will fire for each target element
+          // "item.el" is a target DOM element (if present)
+          // "item.src" is a source that you may modify
+
+          console.log(item); // Do whatever you want with "item" object
+        //   item.src = 'http://static.beeso.cn/images/pic/38/20238.jpg';
+        }
+      }
 			// zoom: {
 			// 	enabled: true, // By default it's false, so don't forget to enable it
 

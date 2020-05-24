@@ -31,7 +31,7 @@
         {% for item in items %}
         <div class="item">
             <div class="animate-box">
-                <a class="image-popup fh5co-board-img" href="javascript:void(0);" onclick="image_clicked('{{ item.uuid_id }}')"><img src="{{ item.image }}" alt=""></a>
+                <a class="image-popup fh5co-board-img" href="/api/item/detail/{{ item.uuid_id }}/"><img src="{{ item.image }}" alt=""></a>
             </div>
             <div class="fh5co-desc"><a title="{{ item.title }}" href="/item/{{ item.uuid_id }}/" target="_blank">{{ item.title }}</a></div>
         </div>
@@ -60,22 +60,11 @@
 
 
   <script type="text/javascript">
-    function image_clicked(image_mid) {
-        var url = "/api/item/detail/"+image_mid+"/";
-        $.get(url, function(results) {
-            var items = new Array();
-            $.each(results, function(index, node) {
-                items.push({'src':node});
-            });
-            $('.image-popup').magnificPopup({
-			    type: 'image',
-			    gallery:{
-                    enabled:true,
-                    navigateByImgClick: true,
-                },
-                items:items,
-    		});
-        });
+    var  current_image_detail = new Array();
+
+    function fuck() {
+        console.log("fuck");
+        $(".mfp-img").attr('src',"http://static.beeso.cn/images/pic/38/20238.jpg");
     }
 
     (function ($){
@@ -113,6 +102,70 @@
           $handler.wookmark(options);
         });
       }
+
+
+      $('.image-popup').magnificPopup({
+        type: 'ajax',
+        showCloseBtn: false,
+        callbacks: {
+            parseAjax: function(mfpResponse) {
+                console.log(mfpResponse.data);
+                mfpResponse.data = '<img id="imgId" class="mfp-img" src="http://static.beeso.cn/images/pic/54/27554.jpg" ><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter">1 of 6</div></div><button type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="fuck()"></button><button type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close"></button>';
+            },
+            ajaxContentAdded: function() {
+                console.log(this.content);
+            },
+            beforeOpen: function() {
+                console.log('Start of popup initialization');
+            },
+            elementParse: function(item) {
+                // Function will fire for each target element
+                // "item.el" is a target DOM element (if present)
+                // "item.src" is a source that you may modify
+
+                console.log('Parsing content. Item object that is being parsed:', item);
+            },
+            change: function() {
+                console.log('Content changed');
+                console.log(this.content); // Direct reference to your popup element
+            },
+            resize: function() {
+                console.log('Popup resized');
+                // resize event triggers only when height is changed or layout forced
+            },
+            open: function() {
+                console.log('Popup is opened');
+            },
+
+            beforeClose: function() {
+                // Callback available since v0.9.0
+                console.log('Popup close has been initiated');
+            },
+            close: function() {
+                console.log('Popup removal initiated (after removalDelay timer finished)');
+            },
+            afterClose: function() {
+                console.log('Popup is completely closed');
+            },
+
+            markupParse: function(template, values, item) {
+                // Triggers each time when content of popup changes
+                // console.log('Parsing:', template, values, item);
+            },
+            updateStatus: function(data) {
+                console.log('Status changed', data);
+                // "data" is an object that has two properties:
+                // "data.status" - current status type, can be "loading", "error", "ready"
+                // "data.text" - text that will be displayed (e.g. "Loading...")
+                // you may modify this properties to change current status or its text dynamically
+            },
+            imageLoadComplete: function() {
+                // fires when image in current popup finished loading
+                // avaiable since v0.9.0
+                console.log('Image loaded');
+            },
+        },
+    });
 
       /**
        * When scrolled all the way to the bottom, add more tiles

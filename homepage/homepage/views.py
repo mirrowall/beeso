@@ -81,3 +81,11 @@ def detail(request, *args, **kwargs):
         'image_viewer.html',
         locals()
     )
+
+
+def image_detail(request, *args, **kwargs):
+    return render(
+        request,
+        'image_detail.html',
+        locals()
+    )
