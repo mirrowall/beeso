@@ -85,6 +85,7 @@ def detail(request, *args, **kwargs):
 
 def image_detail(request, *args, **kwargs):
     tags = ['test', 'fuck', 'you', ]
+    item = Item.objects.first()
     return render(
         request,
         'image_detail.html',

@@ -3,7 +3,7 @@
 
 <div class="rd__modal rd__modal--open" id="photo-modal">
     <div class="rd__modal__overlay">
-      <button class="js-modal-close-button rd__modal__exit rd__button rd__button--text-white rd__button--circle-icon">
+      <button id='close-btn' class="js-modal-close-button rd__modal__exit rd__button rd__button--text-white rd__button--circle-icon">
         <i class="rd__svg-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
@@ -34,19 +34,29 @@
                 <div class="level__item">
                   <div class="level level--responsive-large">
                     <div class="level__item">
-                      <a class="js-photo-page-mini-profile-link photo-page__mini-profile" data-track-action="medium-mini-profile" data-track-label="user-profile" href="/zh-cn/@elina-sazonova">
                         <div class="js-photo-page-mini-profile-avatar photo-page__mini-profile__avatar rd__avatar rd__avatar--large">
-                          <img alt="undefined" src="https://images.pexels.com/users/avatars/912559/elina-sazonova-972.jpeg?w=256&amp;h=256&amp;fit=crop&amp;crop=faces&amp;auto=compress" width="50" height="50"></div>
+                            <img alt="undefined" src={{ item.avatar }} width="50" height="50">
+                        </div>
                         <div class="photo-page__mini-profile__text">
-                          <h3 class="js-photo-page-mini-profile-full-name photo-page__mini-profile__text__title">Elina Sazonova</h3>
-                          <div class="js-photo-page-mini-profile-followers photo-page__mini-profile__text__subtitle">
-                            <span class="js-follower-count-display">5.37 千</span>位关注者</div></div>
-                      </a>
+                            <h3 class="js-photo-page-mini-profile-full-name photo-page__mini-profile__text__title">{{ item.actor }}</h3>
+                            <div class="js-photo-page-mini-profile-followers photo-page__mini-profile__text__subtitle">
+                            <span class="js-follower-count-display">{{ item.view }}</span>位关注者</div>
+                        </div>
                     </div>
                     <div class="level__item">
                       <div class="rd__button-group">
-                        <button class="js-follow js-photo-page-mini-profile-follow-button rd__button rd__button--compact rd__button--white js-follow-912559" data-follow-track-label="photo" data-tooltip="关注该用户" data-track-action="medium-mini-profile" data-track-label="follow-button" data-user-id="912559" data-initialized="true">关注</button>
-                        <a class="js-photo-page-mini-proile-donation-button rd__button rd__button--white rd__button--compact" data-track-action="medium-mini-profile" data-track-label="donate-button" href="/zh-cn/medium/4403924/donate/" rel="nofollow" style="display: inline-flex;" target="_blank">捐赠</a></div>
+                        <button id='follow-actor'
+                            class="js-follow js-photo-page-mini-profile-follow-button rd__button rd__button--compact rd__button--white js-follow-912559"
+                            data-follow-track-label="photo"
+                            data-tooltip="关注该影集"
+                            data-track-action="medium-mini-profile"
+                            data-track-label="follow-button"
+                            data-user-id="912559" data-initialized="true">关注</button>
+                        <a id='tip' class="js-photo-page-mini-proile-donation-button rd__button rd__button--white rd__button--compact"
+                            data-track-action="medium-mini-profile" data-track-la
+                            bel="donate-button"
+                            href="#" rel="nofollow" style="display: inline-flex;" target="_blank">打赏</a>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -54,7 +64,7 @@
               <div class="level__right photo-page__action-buttons-level-item">
                 <div class="level__item photo-page__action-buttons-level-item">
                   <div class="rd__button-group photo-page__action-buttons">
-                    <button class="js-like js-photo-page-action-buttons-like rd__button rd__button--white rd__button--with-icon-left js-like-4403924" data-photo-id="4403924" data-initialized="true">
+                    <button id='like-button' class="js-like js-photo-page-action-buttons-like rd__button rd__button--white rd__button--with-icon-left js-like-4403924" data-photo-id="4403924" data-initialized="true">
                       <i class="rd__button--like--not-active--icon rd__svg-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                           <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path>
@@ -66,8 +76,8 @@
                         </svg>
                       </i>
                       <span class="js-text">
-                        <span class="js-count">197</span>人点赞</span></button>
-                    <button class="js-collect js-photo-page-action-buttons-collect rd__button rd__button--white rd__button--with-icon-left js-collect-4403924" data-photo-id="4403924" data-initialized="true">
+                        <span class="js-count">{{ item.like }}</span>{% if item.like %}人{% endif %}点赞</span></button>
+                    <button id='favorite-button' class="js-collect js-photo-page-action-buttons-collect rd__button rd__button--white rd__button--with-icon-left js-collect-4403924" data-photo-id="4403924" data-initialized="true">
                       <i class="rd__button--collect--not-active--icon rd__svg-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                           <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
@@ -167,24 +177,23 @@
                   </i>
                   <span>信息</span></button>
               </div>
-              <div class="js-photo-info-section photo-page__info-container" style="display: none;">
+              <!-- <div class="js-photo-info-section photo-page__info-container" style="display: none;"> -->
+             <div class="js-photo-info-section photo-page__info-container"></div>
                 <div class="photo-page__info">
                   <div class="js-photo-page-info-column photo-page__info__column">
                     <div class="rd__card js-photo-page-photographer-card">
-                      <div class="rd__card__title js-photo-page-photographer-card-title" data-titles-photo="摄影作者" data-titles-video="视频摄影作者">摄影作者</div>
+                      <div class="rd__card__title js-photo-page-photographer-card-title" data-titles-photo="图集信息" data-titles-video="图集信息">图集信息</div>
                       <div class="rd__card__section">
-                        <a class="js-photo-page-photographer-card-link photo-page__mini-profile" data-track-action="medium-info-photographer" data-track-label="mini-profile-link" href="/zh-cn/@elina-sazonova">
                           <div class="photo-page__mini-profile__avatar rd__avatar rd__avatar--large">
-                            <img alt="Elina Sazonova" class="js-photo-page-photographer-card-img" src="https://images.pexels.com/users/avatars/912559/elina-sazonova-972.jpeg?w=256&amp;h=256&amp;fit=crop&amp;crop=faces&amp;auto=compress" width="50" height="50"></div>
+                            <img alt="Elina Sazonova" class="js-photo-page-photographer-card-img" src="{{ item.avatar }}" width="50" height="50"></div>
                           <div class="photo-page__mini-profile__text">
-                            <h3 class="js-photo-page-photographer-card-full-name photo-page__mini-profile__text__title">Elina Sazonova</h3>
+                            <h3 class="js-photo-page-photographer-card-full-name photo-page__mini-profile__text__title">{{ item.actor }}</h3>
                             <h4 class="photo-page__mini-profile__text__subtitle">
                               <span class="js-follower-count-display">
-                                <span class="js-follower-count-display">5.37 千</span>位关注者</span>
+                                <span class="js-follower-count-display">{{ item.view }}</span>位关注者</span>
                               <span class="js-photo-page-photographer-card-location" style=""></span>
                             </h4>
                           </div>
-                        </a>
                       </div>
                       <div class="rd__card__section">
                         <div class="rd__button-group">
@@ -192,7 +201,7 @@
                           <a class="js-photo-page-photographer-card-donate rd__button rd__button--white rd__button--compact" data-track-action="medium-info-photographer" data-track-label="donate-button" href="/zh-cn/medium/4403924/donate/" rel="nofollow" style="" target="_blank">捐赠</a></div>
                       </div>
                       <div class="js-photo-page-photographer-card-more-photos">
-                        <a class="rd__card__title" href="/zh-cn/@elina-sazonova">Elina 拍摄的更多照片</a>
+                        <a class="rd__card__title" href="/zh-cn/@elina-sazonova">{{ item.actor }} 的更多照片</a>
                         <div class="rd__card__section">
                           <div class="photo-page__info__photographer__more-photos">
                             <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1927220/">
@@ -219,68 +228,38 @@
                         </div>
                       </div>
                     </div>
-                    <div class="js-photo-page-featured-in-card rd__card" style="display: none">
-                      <div class="rd__card__title">展示网站</div>
-                      <div class="rd__card__section">
-                        <div class="js-featured-in-card-items"></div>
-                        <button class="js-featured-in-load-more photo-page-card-featured-in__button">更多精选网站</button></div>
-                    </div>
                   </div>
                   <div class="js-photo-page-info-column photo-page__info__column">
                     <div class="rd__card">
                       <div class="rd__card__title">照片信息</div>
                       <div class="rd__card__section">
                         <div class="rd__card__section__content">
-                          <small class="secondary">上传日期：May 15, 2020</small></div>
+                          <small class="secondary">上传日期：{{ item.pubdate }}</small></div>
                         <table class="photo-page__info__additional-information__table">
                           <tbody>
-                            <tr>
-                              <td>镜头</td>
-                              <td>54.0mm ƒ/2.8 0.016666666666666666s ISO 400</td></tr>
-                            <tr>
                               <td>大小</td>
                               <td>5.25 MB</td></tr>
+                            <tr>
+                                <td>分类</td>
+                                <td>{{ item.category.title }}</td></tr>
                             <tr>
                               <td>分辨率</td>
                               <td>5616px x 3744px</td></tr>
                             <tr>
-                              <td>相机</td>
-                              <td>Canon EOS 5D Mark II</td></tr>
+                                <td>宽高比</td>
+                                <td>3:2</td></tr>
                             <tr>
-                              <td>软件</td>
-                              <td>Adobe Photoshop Lightroom 6.4 (Macintosh)</td></tr>
+                                <td>来源</td>
+                                <td>{{ item.source }}</td></tr>
                             <tr>
                               <td>
-                                <span class="translation_missing" title="translation missing: zh-CN.photos.photo_page.info_cards.photo_information.taken_at">Taken At</span></td>
-                              <td>2015年01月22日 16:56</td></tr>
+                                <span class="translation_missing" title="translation missing: zh-CN.photos.photo_page.info_cards.photo_information.taken_at">拍摄于</span></td>
+                              <td>{{ item.pubdate }}</td></tr>
                             <tr>
-                              <td>宽高比</td>
-                              <td>3:2</td></tr>
-                            <tr>
-                              <td>颜色</td>
-                              <td>
-                                <div class="photo-page__info__additional-information__table__colors">
-                                  <a data-track-action="medium-info-additional-information" data-track-label="color" href="/zh-cn/search/%E9%A2%9C%E8%89%B2:%20%232f4f4f/" style="background: #2f4f4f"></a>
-                                  <a data-track-action="medium-info-additional-information" data-track-label="color" href="/zh-cn/search/%E9%A2%9C%E8%89%B2:%20%23808080/" style="background: #808080"></a>
-                                </div>
-                              </td>
-                            </tr>
+                                <td>描述</td>
+                                <td>{{ item.brief }}</td></tr>
                           </tbody>
                         </table>
-                      </div>
-                    </div>
-                    <div class="rd__card">
-                      <div class="rd__card__title">许可证</div>
-                      <div class="rd__card__section">
-                        <div class="rd__card__section__content">
-                          <small class="no-margin">✓ 免费使用。</small>
-                          <small>✓ 无需注明归属。</small></div>
-                      </div>
-                      <div class="rd__card__section">
-                        <div class="rd__card__section__content">
-                          <a data-track-action="medium-info-pexels-license" data-track-label="learn-more" href="/zh-cn/license/">
-                            <small>了解更多关于许可证的信息 »</small></a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -711,8 +690,6 @@
                 <button class="js-related-photos-request-more rd__button rd__button--full-width rd__button--grey">加载更多</button></section>
             </div>
 
-
-
             <section class="photo-page__section photo-page__section--related-tags" id="photo-page-related-tags">
               <div class="photo-page__section__title">
                 <div class="level">
@@ -741,3 +718,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+        var magnificPopup = $.magnificPopup.instance;
+        $('#close-btn').click(function() {
+            magnificPopup.close();
+        });
+        $('#like-button').click(function() {
+
+        });
+        $('#favorite-button').click(function() {
+
+        });
+        magnificPopup.updateStatus('loading', 'The loading text...');
+  </script>
