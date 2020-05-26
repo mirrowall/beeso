@@ -32,9 +32,9 @@
         {% for item in items %}
         <div class="item">
             <div class="animate-box">
-                <a class="image-popup fh5co-board-img" href="/test/"><img src="{{ item.image }}" alt=""></a>
+                <a class="image-popup fh5co-board-img" href="/detail/{{ item.uuid_id }}/"><img src="{{ item.image }}" alt=""></a>
             </div>
-            <div class="fh5co-desc"><a title="{{ item.title }}" href="/item/{{ item.uuid_id }}/" target="_blank">{{ item.title }}</a></div>
+            <div class="fh5co-desc"><a title="{{ item.title }}" href="/detail/{{ item.uuid_id }}/" target="_blank">{{ item.title }}</a></div>
         </div>
         {% endfor %}
       </div>
