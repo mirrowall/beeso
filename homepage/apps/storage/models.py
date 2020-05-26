@@ -34,7 +34,7 @@ class Item(models.Model):
     manual = models.ImageField(upload_to="images/", null=True, blank=True)
     weight = models.IntegerField(default=0, null=True)
     extend = models.CharField(max_length=255, null=True, blank=True)
-    recommend = models.ManyToManyField("Item")
+    recommend = models.ManyToManyField("Item", null=True, blank=True)
 
     def __str__(self):
         return self.title
