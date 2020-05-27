@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  <title>test html</title>
+  <title>{{ items.title }}-{{ item.brief}}|{{ site.title }}</title>
 {% endblock %}
 
 {% block css %}
@@ -10,7 +10,7 @@
     <!-- Salvattore -->
     <link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/application-9d4f05d631b7d8c541c2afe0e0756ff09af6c178b5007ed9699fc97210d57e90.css' %}">
+    <link rel="stylesheet" href="{% static 'css/application.css' %}">
 {% endblock %}
 
 {% block navi %}

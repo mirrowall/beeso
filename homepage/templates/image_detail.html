@@ -51,11 +51,11 @@
                             data-tooltip="关注该影集"
                             data-track-action="medium-mini-profile"
                             data-track-label="follow-button"
-                            data-user-id="912559" data-initialized="true">关注</button>
+                            data-item-id="{{ item.uuid_id }}" data-initialized="true">关注</button>
                         <a id='tip' class="js-photo-page-mini-proile-donation-button rd__button rd__button--white rd__button--compact"
                             data-track-action="medium-mini-profile" data-track-la
                             bel="donate-button"
-                            href="#" rel="nofollow" style="display: inline-flex;" target="_blank">打赏</a>
+                            href="#" rel="nofollow" style="display: inline-flex;" onclick="on_tips()">打赏</a>
                         </div>
                     </div>
                   </div>
@@ -77,7 +77,7 @@
                       </i>
                       <span class="js-text">
                         <span class="js-count">{{ item.like }}</span>{% if item.like %}人{% endif %}点赞</span></button>
-                    <button id='favorite-button' class="js-collect js-photo-page-action-buttons-collect rd__button rd__button--white rd__button--with-icon-left js-collect-4403924" data-photo-id="4403924" data-initialized="true">
+                    <button id='favorite-button' class="js-collect js-photo-page-action-buttons-collect rd__button rd__button--white rd__button--with-icon-left js-collect-4403924" rel="sidebar" data-photo-id="4403924" data-initialized="true">
                       <i class="rd__button--collect--not-active--icon rd__svg-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                           <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
@@ -191,26 +191,11 @@
                         <a class="rd__card__title" href="/zh-cn/@elina-sazonova">{{ item.actor }} 的更多照片</a>
                         <div class="rd__card__section">
                           <div class="photo-page__info__photographer__more-photos">
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1927220/">
-                              <img src="https://images.pexels.com/photos/1927220/pexels-photo-1927220.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/4k-galaxy-galaxy-2072600/">
-                              <img src="https://images.pexels.com/photos/2072600/pexels-photo-2072600.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/2072583/">
-                              <img src="https://images.pexels.com/photos/2072583/pexels-photo-2072583.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/3971972/">
-                              <img src="https://images.pexels.com/photos/3971972/pexels-photo-3971972.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1850595/">
-                              <img src="https://images.pexels.com/photos/1850595/pexels-photo-1850595.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/heroesbrief-1914770/">
-                              <img src="https://images.pexels.com/photos/1914770/pexels-photo-1914770.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1838554/">
-                              <img src="https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1838596/">
-                              <img src="https://images.pexels.com/photos/1838596/pexels-photo-1838596.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/1914982/">
-                              <img src="https://images.pexels.com/photos/1914982/pexels-photo-1914982.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
-                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo" href="/zh-cn/photo/2072577/">
-                              <img src="https://images.pexels.com/photos/2072577/pexels-photo-2072577.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;fit=crop&amp;h=200&amp;w=280"></a>
+                              {% for img in item.images.all %}
+                            <a class="photo-page__info__photographer__more-photos__photo" data-track-action="medium-info-photographer" data-track-label="related-photo">
+                              <img src="{{ img.thumbnail }}">
+                            </a>
+                              {% endfor %}
                           </div>
                         </div>
                       </div>
@@ -292,10 +277,32 @@
             magnificPopup.close();
         });
         $('#like-button').click(function() {
-
+            var uuid = localStorage.getItem("uuid");
+            if (!uuid) {
+                localStorage.setItem("uuid", guid());
+            }
+            $.post(window.location.protocol + "//" + window.location.host + "/api/item/like/", {'uuid':uuid, 'item':get_item(),'csrfmiddlewaretoken':'{{ csrf_token }}'}, function( data ) {
+            });
+        });
+        $('#follow-actor').click(function() {
+            var uuid = localStorage.getItem("uuid");
+            if (!uuid) {
+                localStorage.setItem("uuid", guid());
+            }
+            $.post(window.location.protocol + "//" + window.location.host + "/api/item/view/", {'uuid':uuid, 'item':get_item(),'csrfmiddlewaretoken':'{{ csrf_token }}'}, function( data ) {
+            });
         });
         $('#favorite-button').click(function() {
-
+            if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+                window.sidebar.addPanel(document.title,window.location.href,'');
+            } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
+                window.external.AddFavorite(location.href,document.title);
+            } else if(window.opera && window.print) { // Opera Hotlist
+                this.title=document.title;
+                return true;
+            } else { // webkit - safari/chrome
+                alert('点击 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D 将其加入收藏夹.');
+            }
         });
         $('#prev-btn').click(function() {
             if (index > 0) {
@@ -333,5 +340,19 @@
                 }
             });
         }
-        console.log(imgs);
+
+        function guid() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                return v.toString(16);
+            });
+        }
+
+        function on_tips() {
+            $('#img-container').attr('src', window.location.protocol + "//" + window.location.host + "/static/images/tips.jpg");
+        }
+
+        function get_item() {
+            return $('#follow-actor').attr('data-item-id');
+        }
   </script>

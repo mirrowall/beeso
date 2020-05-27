@@ -44,3 +44,10 @@ class Hot(models.Model):
     def __str__(self):
         return self.title
 
+
+class Collection(models.Model):
+    ip = models.CharField(max_length=32, null=True)
+    uuid = models.CharField(max_length=64, null=True)
+    item = models.CharField(max_length=64, null=True)
+    type = models.IntegerField(default=0)
+    date = models.DateTimeField(auto_now_add=True)

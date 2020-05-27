@@ -686,16 +686,7 @@ strong {
  -webkit-transform:rotateX(0deg);
  transform:rotateX(0deg)
 }
-@font-face {
- font-family:icons;
- src:url(https://www.pexels.com/assets/icons-f3f17567497b080ad466571a2a36a05b2b2bee8178da2123ec7badf26607eb41.eot);
- src:url(https://www.pexels.com/assets/icons-f3f17567497b080ad466571a2a36a05b2b2bee8178da2123ec7badf26607eb41.eot?#iefix) format("embedded-opentype"),
- url(https://www.pexels.com/assets/icons-e27548fa24efd87efa9eade4407e7caf6764d397bf244d86c049d1227db9df83.woff) format("woff"),
- url(https://www.pexels.com/assets/icons-61116bc9f22d0a94843d040239a607b74d26c44d80fdb8901baad28860d5c34a.ttf) format("truetype"),
- url(https://www.pexels.com/assets/icons-c524c5665c21cd8941a7915243ee678dce53a6edf2a59e2b1dfa62c6b8409cdd.svg#icons) format("svg");
- font-weight:300;
- font-style:normal
-}
+
 [data-icon]:before {
  font-family:icons!important;
  content:attr(data-icon);
