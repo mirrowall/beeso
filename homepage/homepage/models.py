@@ -18,7 +18,7 @@ class Banner(models.Model):
     manual = models.ImageField("手动上传", upload_to="home/", null=True, blank=True)
     valid = models.BooleanField("是否有效", default=True)
     desc = models.CharField("备注", max_length=128, null=True, blank=True)
-    redirect = models.URLField("跳转至", max_length=255, null=True, blank=True)
+    redirect = models.CharField("跳转至", max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.url
