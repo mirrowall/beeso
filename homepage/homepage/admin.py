@@ -18,10 +18,10 @@ class BannerAdmin(admin.ModelAdmin):
 
 
 class RecommandAdmin(admin.ModelAdmin):
-    list_display = ['title', 'seq', 'title']
+    list_display = ['title', 'seq', 'description']
 
 class HotAdmin(admin.ModelAdmin):
-    list_display = ["image", "redirect"]
+    list_display = ["title", "recommand", "redirect"]
 
     def save_model(self, request, obj, form, change):
         super(HotAdmin, self).save_model(request, obj, form, change)
