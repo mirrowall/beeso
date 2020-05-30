@@ -1,5 +1,7 @@
 from django.db import models
 
+from storage.models import Item
+
 class SiteConfig(models.Model):
     title = models.CharField('title', max_length=128)
     logo = models.ImageField('logo', upload_to='home/')
@@ -40,6 +42,7 @@ class Hot(models.Model):
     title = models.CharField("标题", max_length=128)
     description = models.CharField("描述", max_length=128, null=True)
     redirect = models.URLField("跳转至", null=True, blank=True)
+    items = models.ManyToManyField(Item, null=True, blank=True)
 
     def __str__(self):
         return self.title
