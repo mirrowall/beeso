@@ -12,8 +12,9 @@ class BannerAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         super(BannerAdmin, self).save_model(request, obj, form, change)
         if not change:
-            obj.url = ("%s://%s%s"%(request.scheme, request.get_host(), obj.manual.url))
-            obj.save()
+            if obj.manual:
+                obj.url = ("%s://%s%s"%(request.scheme, request.get_host(), obj.manual.url))
+                obj.save()
 
 
 class RecommandAdmin(admin.ModelAdmin):
@@ -25,8 +26,9 @@ class HotAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         super(HotAdmin, self).save_model(request, obj, form, change)
         if not change:
-            obj.image = ("%s://%s%s"%(request.scheme, request.get_host(), obj.manual.url))
-            obj.save()
+            if obj.manual:
+                obj.image = ("%s://%s%s"%(request.scheme, request.get_host(), obj.manual.url))
+                obj.save()
 
 admin.site.register(SiteConfig, SiteAdmin)
 admin.site.register(Banner, BannerAdmin)
