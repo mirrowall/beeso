@@ -12,7 +12,7 @@ from homepage.models import SiteConfig, Banner, Recommand, Hot, Collection
 
 
 def homepage(request):
-    categories = Category.objects.all()
+    categories = Category.objects.filter(showed=True)
     items = Item.objects.all()
 
     site = SiteConfig.objects.filter(valid=True).first()
