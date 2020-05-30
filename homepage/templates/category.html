@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  <title>{{ items.title }}-{{ item.brief}}|{{ site.title }}</title>
+  <title>{{ current.title }}-{{ current.description}}|{{ site.title }}</title>
 {% endblock %}
 
 {% block css %}
@@ -10,7 +10,7 @@
     <!-- Salvattore -->
     <link rel="stylesheet" href="{% static 'css/salvattore.css' %}">
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/application.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/application.css' %}"> -->
 {% endblock %}
 
 {% block navi %}
@@ -50,12 +50,12 @@
   <script src="{% static 'js/salvattore.min.js' %}"></script>
   <!-- Modernizr JS -->
   <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<!-- Magnific Popup -->
-	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <!-- Magnific Popup -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 
     <script src="{% static 'js/main.js' %}"></script>
 
@@ -92,16 +92,16 @@
        * Reinitializes the wookmark handler after all images have loaded
        */
       function applyLayout() {
-        $tiles.imagesLoaded(function() {
-          // Destroy the old handler
-          if ($handler.wookmarkInstance) {
-            $handler.wookmarkInstance.clear();
-          }
+        // $tiles.imagesLoaded(function() {
+        //   // Destroy the old handler
+        //   if ($handler.wookmarkInstance) {
+        //     $handler.wookmarkInstance.clear();
+        //   }
 
-          // Create a new layout handler.
-          $handler = $('.card');
-          $handler.wookmark(options);
-        });
+        //   // Create a new layout handler.
+        //   $handler = $('.card');
+        //   $handler.wookmark(options);
+        // });
       }
 
 
@@ -109,62 +109,62 @@
         type: 'ajax',
         showCloseBtn: false,
         callbacks: {
-            parseAjax: function(mfpResponse) {
-                console.log(mfpResponse.data);
-                // mfpResponse.data = '<img id="imgId" class="mfp-img" src="http://static.beeso.cn/images/pic/54/27554.jpg" ><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter">1 of 6</div></div><button type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="fuck()"></button><button type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close"></button>';
-            },
-            ajaxContentAdded: function() {
-                console.log(this.content);
-            },
-            beforeOpen: function() {
-                console.log('Start of popup initialization');
-            },
-            elementParse: function(item) {
-                // Function will fire for each target element
-                // "item.el" is a target DOM element (if present)
-                // "item.src" is a source that you may modify
+            // parseAjax: function(mfpResponse) {
+            //     console.log(mfpResponse.data);
+            //     // mfpResponse.data = '<img id="imgId" class="mfp-img" src="http://static.beeso.cn/images/pic/54/27554.jpg" ><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter">1 of 6</div></div><button type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="fuck()"></button><button type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close"></button>';
+            // },
+            // ajaxContentAdded: function() {
+            //     console.log(this.content);
+            // },
+            // beforeOpen: function() {
+            //     console.log('Start of popup initialization');
+            // },
+            // elementParse: function(item) {
+            //     // Function will fire for each target element
+            //     // "item.el" is a target DOM element (if present)
+            //     // "item.src" is a source that you may modify
 
-                console.log('Parsing content. Item object that is being parsed:', item);
-            },
-            change: function() {
-                console.log('Content changed');
-                console.log(this.content); // Direct reference to your popup element
-            },
-            resize: function() {
-                console.log('Popup resized');
-                // resize event triggers only when height is changed or layout forced
-            },
-            open: function() {
-                console.log('Popup is opened');
-            },
+            //     console.log('Parsing content. Item object that is being parsed:', item);
+            // },
+            // change: function() {
+            //     console.log('Content changed');
+            //     console.log(this.content); // Direct reference to your popup element
+            // },
+            // resize: function() {
+            //     console.log('Popup resized');
+            //     // resize event triggers only when height is changed or layout forced
+            // },
+            // open: function() {
+            //     console.log('Popup is opened');
+            // },
 
-            beforeClose: function() {
-                // Callback available since v0.9.0
-                console.log('Popup close has been initiated');
-            },
-            close: function() {
-                console.log('Popup removal initiated (after removalDelay timer finished)');
-            },
-            afterClose: function() {
-                console.log('Popup is completely closed');
-            },
+            // beforeClose: function() {
+            //     // Callback available since v0.9.0
+            //     console.log('Popup close has been initiated');
+            // },
+            // close: function() {
+            //     console.log('Popup removal initiated (after removalDelay timer finished)');
+            // },
+            // afterClose: function() {
+            //     console.log('Popup is completely closed');
+            // },
 
-            markupParse: function(template, values, item) {
-                // Triggers each time when content of popup changes
-                // console.log('Parsing:', template, values, item);
-            },
-            updateStatus: function(data) {
-                console.log('Status changed', data);
-                // "data" is an object that has two properties:
-                // "data.status" - current status type, can be "loading", "error", "ready"
-                // "data.text" - text that will be displayed (e.g. "Loading...")
-                // you may modify this properties to change current status or its text dynamically
-            },
-            imageLoadComplete: function() {
-                // fires when image in current popup finished loading
-                // avaiable since v0.9.0
-                console.log('Image loaded');
-            },
+            // markupParse: function(template, values, item) {
+            //     // Triggers each time when content of popup changes
+            //     // console.log('Parsing:', template, values, item);
+            // },
+            // updateStatus: function(data) {
+            //     console.log('Status changed', data);
+            //     // "data" is an object that has two properties:
+            //     // "data.status" - current status type, can be "loading", "error", "ready"
+            //     // "data.text" - text that will be displayed (e.g. "Loading...")
+            //     // you may modify this properties to change current status or its text dynamically
+            // },
+            // imageLoadComplete: function() {
+            //     // fires when image in current popup finished loading
+            //     // avaiable since v0.9.0
+            //     console.log('Image loaded');
+            // },
         },
     });
 
@@ -173,13 +173,16 @@
        */
       function onScroll() {
         // Check if we're within 100 pixels of the bottom edge of the broser window.
-        var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
-            closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
+        var winHeight = window.innerHeight ? window.innerHeight : $window.height(); // iphone fix
+        var closeToBottom = ($window.scrollTop() + winHeight > $document.height() - 100);
+
+
+        console.log("height " + winHeight + "  " + "  -- " + closeToBottom);
 
         if (closeToBottom) {
             if ($('#current_request_api').val() && !requesting) {
                 requesting = true;
-                $.post($('#current_request_api').val(), {'cate': curent_category}, function(result) {
+                $.post($('#current_request_api').val(), {'cate': curent_category,'csrfmiddlewaretoken':'{{ csrf_token }}'}, function(result) {
                     if (result['next']) {
                         $('#current_request_api').val(result['next']);
                     }
