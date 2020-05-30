@@ -32,7 +32,7 @@ def homepage(request):
 def category(request, *args, **kwargs):
     category = kwargs['category']
 
-    categories = Category.objects.all()
+    categories = Category.objects.filter(showed=True)
     site = SiteConfig.objects.filter(valid=True).first()
     current = Category.objects.get(slug=category)
     items = Item.objects.filter(category=current).order_by("-weight")[:20]

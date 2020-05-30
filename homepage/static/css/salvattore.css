@@ -15,9 +15,6 @@
         clear: both;
     }
 }
-.size-1of5 {
-    width: 20%;
-}
 .size-1of4 {
     width: 25%;
 }
@@ -52,14 +49,14 @@
     }
 }
 
-@media screen and (min-width: 851px) and (max-width: 1000px){
+@media screen and (min-width: 851px) {
     #fh5co-board[data-columns]::before {
         content: '4 .column.size-1of4';
     }
 }
 
-@media screen and (min-width: 1000px) {
+/* @media screen and (min-width: 1000px) {
     #fh5co-board[data-columns]::before {
         content: '5 .column.size-1of5';
     }
-}
+} */

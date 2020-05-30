@@ -11,6 +11,7 @@ class Category(models.Model):
     seq = models.IntegerField(default=0, null=True)
     image = models.URLField(max_length=255, null=True, blank=True)
     manual = models.ImageField(upload_to='images/', null=True, blank=True)
+    showed = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
