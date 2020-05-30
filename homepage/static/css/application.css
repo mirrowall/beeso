@@ -1,4 +1,4 @@
-*,
+/* *,
 :before,
 :after {
  box-sizing:border-box
@@ -15,7 +15,7 @@ html {
  height:100%;
  margin:0;
  background-color:#fff
-}
+} */
 p {
  line-height:1.5;
  margin:0 0 10px
@@ -91,7 +91,7 @@ input[type=password]:focus {
  border-color:#071b4d;
  outline:0
 }
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
  color:#d3d3d3;
  opacity:1
 }
@@ -110,7 +110,7 @@ input[type=password]:focus {
 ::placeholder {
  color:#d3d3d3;
  opacity:1
-}
+} */
 img {
  max-width:100%
 }
