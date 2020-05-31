@@ -68,6 +68,27 @@ def image_detail(request, *args, **kwargs):
     )
 
 
+def recommend_view(request, *args, **kwargs):
+    hotid = kwargs['hid']
+
+    categories = Category.objects.filter(showed=True)
+
+    site = SiteConfig.objects.filter(valid=True).first()
+    current = Hot.objects.get(id__exact=int(hotid))
+
+    items = current.items.all().order_by("-weight")[:20]
+
+    api = ''
+    if current.items.count() > 20:
+        api = '/api/item/more/?page=2'
+
+    return render(
+        request,
+        'category.html',
+        locals()
+    )
+
+
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
