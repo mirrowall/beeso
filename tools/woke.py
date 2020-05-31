@@ -13,7 +13,7 @@ def change_category_item_weight(db, cursor, category_id):
     cursor.execute(sql)
     results = cursor.fetchall()
     for result in results:
-        sql = 'update storage_item set weight=%d where id=%d'%(random.randint(10000), result[0])
+        sql = 'update storage_item set weight=%d where id=%d'%(random.randint(100, 10000), result[0])
         cursor.execute(sql)
     db.commit()
 
