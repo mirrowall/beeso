@@ -92,7 +92,7 @@ class ItemDetailView(APIView):
     def get(self, request, *args, **kwargs):
         item = Item.objects.get(uuid_id=kwargs['mid'])
         images = Image.objects.filter(item=item).order_by("seq")
-        return Response([image.image for image in images])
+        return Response([{"img":image.image,"width":image.width,"height":image.height} for image in images])
 
 
 class ItemFollowView(APIView):

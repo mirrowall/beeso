@@ -42,6 +42,7 @@ class Hot(models.Model):
     title = models.CharField("标题", max_length=128)
     description = models.CharField("描述", max_length=128, null=True)
     redirect = models.URLField("跳转至", null=True, blank=True)
+    items = models.ManyToManyField(Item, null=True)
 
     def __str__(self):
         return self.title

@@ -187,14 +187,23 @@ def set_item_publisher(db, cursor):
 
         sql = 'update storage_item set publisher="%s",pubdate="%s",weight=%d,avatar="%s",view=%d,liked=%d'\
                     %(  NICKNAME[random.randint(len(NICKNAME))].strip(),
-                        "%d-%d-%d %d:%d:%d"%(random.randint(2013,2016),random.randint(1,12),random.randint(1,28),random.randint(5,23),random.randint(60),random.randint(60)),
-                        random.randint(10000),
-                        img[0],
-                        random.randint(100),
-                        random.randint(100),
+                        "%d-%d-%d %d:%d:%d"%(random.randint(2013,2016),random.randint(1,12),random.randint(1,28),random.randint(5,23),random.randint(1,59),random.randint(1,59)),
+                        random.randint(100, 10000),
+                        img[0] if img else None,
+                        random.randint(10, 100),
+                        random.randint(10, 100),
                     )
         cursor.execute(sql)
     db.commit()
+
+
+def make_recommend_item(db, cursor):
+    item_count = 6000
+    sql = 'select id from storage_category where showed=False'
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    for cate in results:
+        
 
 
 

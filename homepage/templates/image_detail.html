@@ -312,7 +312,12 @@
                 index = images.length - 1;
             }
             var img = images[index];
-            $('#img-container').attr('src', img);
+            $('#img-container').attr('src', img['img']);
+            if (img['width'] > img['height']) {
+                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(200vh); min-height: 300px; min-width: calc(500px);");
+            } else {
+                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(0vh); min-height: 300px; min-width: calc(500px);");
+            }
             $('#img-index').text("" + (index+1) + "/" + images.length);
         });
         $('#next-btn').click(function() {
