@@ -63,9 +63,13 @@
   <script type="text/javascript">
     var  current_image_detail = new Array();
 
-    function fuck() {
-        console.log("fuck");
-        $(".mfp-img").attr('src',"http://static.beeso.cn/images/pic/38/20238.jpg");
+    function reload() {
+      $('.image-popup').magnificPopup({
+        type: 'ajax',
+        showCloseBtn: false,
+        callbacks: {
+        },
+      });
     }
 
     (function ($){
@@ -211,7 +215,7 @@
                             }
 			            } , { offset: '75%' } );
                     }
-
+                    reload();
                 });
             }
           // Get the first then items from the grid, clone them, and add them to the bottom of the grid
