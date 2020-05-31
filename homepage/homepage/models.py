@@ -41,7 +41,7 @@ class Hot(models.Model):
     manual = models.ImageField("手动上传", upload_to="home/", null=True, blank=True)
     title = models.CharField("标题", max_length=128)
     description = models.CharField("描述", max_length=128, null=True)
-    redirect = models.URLField("跳转至", null=True, blank=True)
+    redirect = models.CharField("跳转至", max_length=128, null=True, blank=True)
     valid= models.BooleanField("生效", default=True)
     items = models.ManyToManyField(Item)
 
