@@ -49,6 +49,9 @@ class Image(models.Model):
     high = models.URLField(max_length=255, null=True, blank=True)
     medium = models.URLField(max_length=255, null=True, blank=True)
     thumbnail = models.URLField(max_length=255, null=True, blank=True)
+    height = models.IntegerField(default=0, null=True)
+    width = models.IntegerField(default=0, null=True)
+    size = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return self.image

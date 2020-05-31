@@ -83,6 +83,8 @@ if __name__ == '__main__':
             dstcurse.execute(sql)
         dstdb.commit()
     """
+
+    """
     IMAGE_FOLDER = "/home/miwoo/workspace/beeso/tools"
     sql = "select image from storage_image"
     dstcurse.execute(sql)
@@ -91,5 +93,15 @@ if __name__ == '__main__':
         filename = os.path.join(IMAGE_FOLDER, img[0][img[0].find("pic"):])
         if os.path.exists(filename):
             thumb_photo(filename, os.path.join(IMAGE_FOLDER, "thumbnail", "%.jpg"%(hashname(img[0]))))
+    """
+    sql = 'select image,id from storage_image'
+    dstcurse.execute(sql)
+    iamges = dstcurse.fetchall()
+    for img in images:
+        filename = os.path.join(IMAGE_FOLDER, img[0][img[0].find("pic"):])
+        __img = Image.open(filename)
+        ss = 'update storage_image set width=%d,height=%d,size=%d where id=%d'%(__img[0],__img[1],os.path.getsize(filename),img[1])
+        dstcurse.execute(sql)
+    dstdb.commit()
 
         
