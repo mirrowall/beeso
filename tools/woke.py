@@ -41,5 +41,8 @@ def make_recommend_item(db, cursor):
 
 if __name__ == '__main__':
     db,cursor = connect("beesodba", "Fuck!@#$1234beeso", "beesodb")
-    change_category_item_weight(db, cursor)
+    sql = "select id from storage_category where showed=1"
+    cursor.execute(sql)
+    for cate in cursor.fetchall():
+        change_category_item_weight(db, cursor, cate[0])
     make_recommend_item(db, cursor)
