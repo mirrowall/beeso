@@ -199,12 +199,23 @@ def set_item_publisher(db, cursor):
 
 def make_recommend_item(db, cursor):
     item_count = 6000
-    sql = 'select id from storage_category where showed=False'
+    sql = 'select id from homepage_hot where valid=1'
     cursor.execute(sql)
     results = cursor.fetchall()
     for cate in results:
-        
+        sql = 'delete from homepage_hot_items where hot_id=%d' % (cate[0])
+        cursor.execute(sql)
+        db.commit()
 
+        arrs = {}
+        for _ in range(300):
+            ids = random.randint(1, item_count)
+            while ids in arrs:
+                ids = random.randint(1, item_count)
+            arrs[ids] = True
+            sql = 'insert into homepage_hot_items(hot_id,item_id) values(%d,%d)'%(cate[0], ids)
+            cursor.execute(sql)
+    db.commit()
 
 
 if __name__ == '__main__':
