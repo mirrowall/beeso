@@ -182,6 +182,7 @@ def set_item_publisher(db, cursor):
     results = cursor.fetchall()
     for result in results:
         sql = 'select thumbnail from storage_image where item_id=%d limit 1'%(result[0])
+        cursor.execute(sql)
         img = cursor.fetchone()
 
         sql = 'update storage_item set publisher="%s",pubdate="%s",weight=%d,avatar="%s",view=%d,liked=%d'\
