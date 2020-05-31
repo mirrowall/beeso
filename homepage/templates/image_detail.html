@@ -312,13 +312,7 @@
                 index = images.length - 1;
             }
             var img = images[index];
-            $('#img-container').attr('src', img['img']);
-            if (img['width'] > img['height']) {
-                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(200vh); min-height: 300px; min-width: calc(500px);");
-            } else {
-                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(0vh); min-height: 300px; min-width: calc(500px);");
-            }
-            $('#img-index').text("" + (index+1) + "/" + images.length);
+            refresh_image(img);
         });
         $('#next-btn').click(function() {
             if (index < images.length-1) {
@@ -327,10 +321,9 @@
                 index = 0;
             }
             var img = images[index];
-            $('#img-container').attr('src', img);
-            $('#img-index').text("" + (index+1) + "/" + images.length);
+            refresh_image(img);
         });
-        magnificPopup.updateStatus('loading', 'The loading text...');
+        magnificPopup.updateStatus('加载中', '正在加载图片，请稍候');
 
         var imgs = $('#img-container').attr('data-set');
         if (imgs) {
@@ -340,10 +333,19 @@
                     images = data;
 
                     var img = data[index];
-                    $('#img-container').attr('src', img);
-                    $('#img-index').text("" + (index+1) + "/" + images.length);
+                    refresh_image(img);
                 }
             });
+        }
+
+        function refresh_image(img) {
+            $('#img-container').attr('src', img['img']);
+            if (img['width'] > img['height']) {
+                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(200vh); min-height: 300px; min-width: calc(500px);");
+            } else {
+                $('#img-container').attr('style', "background: rgb(120, 117, 117) none repeat scroll 0% 0%; max-height: 75vh; max-width: calc(0vh); min-height: 300px; min-width: calc(500px);");
+            }
+            $('#img-index').text("" + (index+1) + "/" + images.length);
         }
 
         function guid() {
