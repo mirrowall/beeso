@@ -1,5 +1,5 @@
 # coding:utf-8
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -16,10 +16,14 @@ urlpatterns = [
     url(r'^api/item/more/$', csrf_exempt(ItemMoreView.as_view())),
     url(r'^api/item/detail/(?P<mid>([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}))/$', csrf_exempt(ItemDetailView.as_view())),
 
+
     url(r'^$', homepage),
+    url(r'^verify/captcha/', include('captcha.urls')),
     url(r'^recommend/(?P<hid>\d+)/$', recommend_view,),
     url(r'^item/(?P<mid>([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}))/$', detail),
     url(r'^detail/(?P<mid>([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}))/$', image_detail),
     url(r'(?P<category>(\w+))/$', category),
+
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -3,3 +3,4 @@ django-taggit
 django-sass-processor
 mysqlclient
 Pillow
+django-simple-captcha

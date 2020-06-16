@@ -10,6 +10,9 @@ from rest_framework.views import APIView
 from storage.models import Category, Item, Image
 from homepage.models import SiteConfig, Banner, Recommand, Hot, Collection
 
+from captcha.models import CaptchaStore
+from captcha.helpers import  captcha_image_url
+
 
 def homepage(request):
     categories = Category.objects.filter(showed=True)
@@ -60,10 +63,19 @@ def detail(request, *args, **kwargs):
 
 
 def image_detail(request, *args, **kwargs):
-    item = Item.objects.get(uuid_id=kwargs['mid'])
+    # item = Item.objects.get(uuid_id=kwargs['mid'])
+    # return render(
+    #     request,
+    #     'image_detail.html',
+    #     locals()
+    # )
+    hashkey = CaptchaStore.generate_key()  # 验证码答案
+    image_url = captcha_image_url(hashkey)  # 验证码地址
+    captcha = {'hashkey': hashkey, 'image_url': image_url}
+
     return render(
         request,
-        'image_detail.html',
+        'captcha.html',
         locals()
     )
 

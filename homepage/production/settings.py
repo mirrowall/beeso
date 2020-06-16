@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'taggit',
     'sass_processor',
     'rest_framework',
+    'captcha',
 
     'storage',
     'homepage',
@@ -157,3 +158,15 @@ STATICFILES_FINDERS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL='/media/'
+
+CAPTCHA_IMAGE_SIZE = (320, 180)   # 设置 captcha 图片大小
+CAPTCHA_LENGTH = 4   # 字符个数
+CAPTCHA_FONT_SIZE = 60
+CAPTCHA_TIMEOUT = 1   # 超时(minutes)
+CAPTCHA_OUTPUT_FORMAT = '%(image)s %(text_field)s %(hidden_field)s '
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_null',
+     'captcha.helpers.noise_arcs', # 线
+     'captcha.helpers.noise_dots', # 点
+)
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
